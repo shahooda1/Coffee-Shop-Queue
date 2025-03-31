@@ -1,0 +1,59 @@
+line = []
+
+def getName():
+    
+    name = input("\nEnter the name for the order.")
+    
+    line.append(name)
+    
+
+def serve():
+    
+    print(f"{line[0]} has been served.")
+    
+    line.pop(0)
+    
+    
+def printLine():
+    
+    print("\nThe current line is:")
+    print()
+    
+    for i in range(len(line)):
+
+        print(line[i], end=", ")
+        
+   
+def action(): 
+    
+    
+    print("\n1. Take an order")
+    print("\n2. Serve a customer")
+    print("\n3. View the line")
+    print("\n4. Quit the program")
+    
+    
+    while True:
+        
+        if userInput.isdigit() == True:
+            
+            
+        
+        userInput = input()
+    
+    
+    
+    
+    
+    
+
+
+print("Welcome to the Shahood's Coffee Shop Simulator\n")
+
+while True:
+    
+    
+    
+    
+    
+    
