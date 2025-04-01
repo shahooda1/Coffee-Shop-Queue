@@ -1,57 +1,93 @@
+
+# Empty line variable
 line = []
 
-def getName():
+# Asks user for a name and adds it to the line
+def takeOrder():
     
-    name = input("\nEnter the name for the order.")
+    name = input("\nEnter the name for the order.\n")
     
     line.append(name)
     
-
+# Checks if the line is empty. If it's not, serves the first customer in the line
 def serve():
     
-    print(f"{line[0]} has been served.")
+    if len(line) > 0:
     
-    line.pop(0)
+        print()
+        print(f"{line[0]} has been served.")
+        
+        line.pop(0)
+        
+    else:
+        
+        print("\nThe line is currently empty. Take a customer's order first.")
     
-    
+# Prints out the current line
 def printLine():
     
-    print("\nThe current line is:")
-    print()
+    if len(line) > 0:
     
-    for i in range(len(line)):
-
-        print(line[i], end=", ")
+        print("\nThe current line is:")
+        print()
         
-   
+        for i in range(len(line)):
+    
+            print(line[i], end=", ")
+            
+        print("\n")
+        
+    else:
+        
+        print("\nThe line is currently empty.")
+        
+# Function to loop through the game
 def action(): 
-    
-    
-    print("\n1. Take an order")
-    print("\n2. Serve a customer")
-    print("\n3. View the line")
-    print("\n4. Quit the program")
-    
     
     while True:
         
+        # Printing options for the user
+        print("\n1. Take an order")
+        print("2. Serve a customer")
+        print("3. View the line")
+        print("4. Quit the program")
+        
+        # Getting user input
+        userInput = input("\nChoose an option:")
+        
+        
         if userInput.isdigit() == True:
             
+            if userInput == "1":
+                
+                takeOrder()
             
-        
-        userInput = input()
-    
-    
-    
-    
-    
-    
+            elif userInput == "2":
+                
+                serve()
+                
+            elif userInput == "3":
+                
+                printLine()
+
+            elif userInput == "4":
+                
+                print("\nGoodbye!")
+                break
+                
+            else:
+                
+                print("\nPlease enter a number from 1-4")
+            
+        else:
+            
+            print("\nPlease provide a valid input.")
+
+# Printing this statement 1 time
+print("Welcome to the Shahood's Coffee Shop Simulator")
 
 
-print("Welcome to the Shahood's Coffee Shop Simulator\n")
-
-while True:
-    
+action()
     
     
     
